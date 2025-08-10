@@ -59,7 +59,7 @@ export default function Reel() {
     <div className="bg-[#f4f1fa] px-2 py-3 rounded-xl shadow mb-5 border border-purple-200">
       <h2 className="text-lg sm:text-xl font-bold text-[#3b1769] mb-3 flex items-center gap-2">
         <span className="text-purple-700 text-2xl" aria-hidden>🎬</span>
-        आज की Reel्स
+        आज की रील्स
       </h2>
       <div className="relative flex items-center justify-center w-full">
         <button

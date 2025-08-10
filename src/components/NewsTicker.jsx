@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from "react";
 
 const NewsTicker = () => {
   const newsItems = [
@@ -6,23 +6,22 @@ const NewsTicker = () => {
     "Breaking News: नए कृषि कानूनों पर किसानों का विरोध प्रदर्शन जारी",
     "Top Story: वैश्विक अर्थव्यवस्था में सुधार के संकेत",
   ];
-  const [currentNewsIndex, setCurrentNewsIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentNewsIndex((prevIndex) => (prevIndex + 1) % newsItems.length);
-    }, 5000); // Change news every 5 seconds
-    return () => clearInterval(interval);
-  }, [newsItems.length]);
 
   return (
-    <div className="bg-red-700 text-white py-2 px-4 md:px-8 flex items-center overflow-hidden">
-      <div className="bg-red-900 px-3 py-1 rounded-md text-sm font-semibold mr-4 whitespace-nowrap">
+    <div className="flex items-center bg-red-700 text-white py-2 px-4 md:px-8 overflow-hidden">
+      {/* Left Fixed Label */}
+      <div className="bg-red-900 px-3 py-1 rounded-md text-xs sm:text-sm font-semibold mr-4 whitespace-nowrap">
         Latest Updates
       </div>
+
+      {/* Continuous Marquee */}
       <div className="flex-1 overflow-hidden">
-        <div className="animate-marquee">
-          <span className="whitespace-nowrap">{newsItems[currentNewsIndex]}</span>
+        <div className="inline-block animate-marquee whitespace-nowrap">
+          {newsItems.map((item, i) => (
+            <span key={i} className="mx-8 text-xs sm:text-sm md:text-base">
+              {item}
+            </span>
+          ))}
         </div>
       </div>
     </div>

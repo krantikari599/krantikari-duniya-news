@@ -1,15 +1,12 @@
 {
   "name": "krantikariduniya",
   "private": true,
-  "homepage": "https://krantikari599.github.io/krantikari-duniya",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
   "dev": "vite",
   "build": "vite build",
-  "preview": "vite preview",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist"
+  "preview": "vite preview"
 },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.16",

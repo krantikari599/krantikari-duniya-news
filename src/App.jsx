@@ -152,7 +152,7 @@ function App() {
             {/* Main Content Area */}
             <section className="lg:col-span-2">
                    <h2 className="text-2xl font-bold text-gray-800 mb-4 pb-2 border-b-2 border-gray-300">
-                  <i className="fas fa-th-list mr-2 text-red-800"></i> Top News
+                  <i className="fas fa-th-list mr-2 text-red-800"></i> प्रमुख ख़बरें
                   </h2>
                 <NewsCarousel />
 

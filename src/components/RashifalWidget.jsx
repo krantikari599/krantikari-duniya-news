@@ -144,20 +144,25 @@ const RashifalCarousel = () => {
   const currentRashi = rashifals[current];
 
   return (
-    <div className="bg-yellow-50 p-6 rounded-xl shadow-lg max-w-3xl mx-auto border border-yellow-200 transition-all duration-300">
-      <div className="flex items-center justify-between border-b border-yellow-400 pb-3 mb-4">
-        <h2 className="text-2xl font-bold text-yellow-900">✨ आज का राशिफल</h2>
+    <div className="bg-yellow-50 p-4 sm:p-6 rounded-xl shadow-lg max-w-full sm:max-w-3xl mx-auto border border-yellow-200 transition-all duration-300">
+      
+      {/* Header & Controls */}
+      <div className="flex flex-col sm:flex-row items-center sm:justify-between border-b border-yellow-400 pb-3 mb-4 space-y-3 sm:space-y-0">
+        <h2 className="text-xl sm:text-2xl font-bold text-yellow-900 text-center sm:text-left">
+          ✨ आज का राशिफल
+        </h2>
+
         <div className="space-x-3">
           <button
             onClick={prev}
-            className="text-yellow-700 hover:text-yellow-900 text-lg"
+            className="px-3 py-1 rounded-full bg-yellow-200 hover:bg-yellow-300 text-yellow-800"
             aria-label="Previous"
           >
             <i className="fas fa-chevron-left"></i>
           </button>
           <button
             onClick={next}
-            className="text-yellow-700 hover:text-yellow-900 text-lg"
+            className="px-3 py-1 rounded-full bg-yellow-200 hover:bg-yellow-300 text-yellow-800"
             aria-label="Next"
           >
             <i className="fas fa-chevron-right"></i>
@@ -165,21 +170,27 @@ const RashifalCarousel = () => {
         </div>
       </div>
 
+      {/* Rashi Content */}
       <div className="flex flex-col sm:flex-row items-center sm:items-start sm:space-x-6 space-y-4 sm:space-y-0">
+        
+        {/* Icon & Rashi Name */}
         <div className="text-center sm:text-left sm:w-1/3">
-          <div className="text-6xl text-yellow-700">{currentRashi.icon}</div>
-          <h3 className="text-xl font-semibold text-yellow-800 mt-2">{currentRashi.rashi}</h3>
+          <div className="text-5xl sm:text-6xl text-yellow-700">{currentRashi.icon}</div>
+          <h3 className="text-lg sm:text-xl font-semibold text-yellow-800 mt-2">
+            {currentRashi.rashi}
+          </h3>
         </div>
 
+        {/* Points */}
         <div className="sm:w-2/3">
-          <ul className="list-disc list-inside text-yellow-900 text-sm space-y-1">
+          <ul className="list-disc list-inside text-yellow-900 text-sm sm:text-base space-y-1">
             {currentRashi.points.map((point, idx) => (
               <li key={idx}>{point}</li>
             ))}
           </ul>
           <a
             href="#"
-            className="text-yellow-800 hover:underline text-sm font-semibold inline-block mt-4"
+            className="text-yellow-800 hover:underline text-sm sm:text-base font-semibold inline-block mt-4"
           >
             और पढ़ें...
           </a>
